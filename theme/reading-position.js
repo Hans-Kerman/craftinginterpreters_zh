@@ -30,6 +30,11 @@
     timer = setTimeout(savePosition, DEBOUNCE_MS);
   }, { passive: true });
 
+  window.addEventListener("pagehide", savePosition);
+  document.addEventListener("visibilitychange", function () {
+    if (document.visibilityState === "hidden") savePosition();
+  });
+
   function restorePosition() {
     try {
       var raw = localStorage.getItem(POS_PREFIX + location.pathname);
