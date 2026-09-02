@@ -1,0 +1,17 @@
+# ci.buttercat.top 在线阅读器配置（设计文档：docs/superpowers/specs/2026-09-02-ci-reader-design.md）
+
+[book]
+title = "手撸解释器教程"
+authors = ["Bob Nystrom"]
+description = "Crafting Interpreters 中文翻译（郭娅祥 译）"   # mdBook 无 subtitle 字段
+src = "content"        # 关键：直接以既有 content/ 为源，不移动/不修改其中任何既有章节与图片目录，上游合并零冲突
+language = "zh"
+
+[build]
+build-dir = "book"
+create-missing = false   # 书已定稿：缺文件应当构建失败而非静默生成空页
+
+[output.html]
+# 第二阶段：additional-js = ["theme/reading-position.js"]（阅读位置记忆）
+# 不设 git-repository-url / edit-url-template（校内阅读器，保持极简）
+# 不设 default-theme（跟随浏览器深色偏好）
