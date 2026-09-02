@@ -12,6 +12,6 @@ build-dir = "book"
 create-missing = false   # 书已定稿：缺文件应当构建失败而非静默生成空页
 
 [output.html]
-# 第二阶段：additional-js = ["theme/reading-position.js"]（阅读位置记忆）
+additional-js = ["theme/reading-position.js"]   # 阅读位置记忆（spec §5.3）
 # 不设 git-repository-url / edit-url-template（校内阅读器，保持极简）
 # 不设 default-theme（跟随浏览器深色偏好）
